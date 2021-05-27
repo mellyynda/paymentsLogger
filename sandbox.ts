@@ -1,8 +1,15 @@
-const character = "mario";
+let character = 'melly';
+let age = 32;
+let isBlackBelt = false;
 
-console.log(character);
+//variables are locked to their type cannot be reassigned to new types
+character = 'amelie';
+age = 25;
+isBlackBelt = true;
 
-const inputs = document.querySelectorAll('input');
+const circ = (diameter: number) => {
+  return diameter * Math.PI;
+}
 
-console.log(inputs);
-
+console.log(circ(7.5));
+console.log('just checking github credentials');
