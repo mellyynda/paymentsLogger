@@ -12,4 +12,4 @@ const circ = (diameter: number) => {
 }
 
 console.log(circ(7.5));
-console.log('just checking github credentials');
+console.log('checking github credentials');
