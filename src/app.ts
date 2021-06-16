@@ -1,3 +1,5 @@
+import { Invoice } from './classes/Invoice.js';
+
 //dom interaction
 //const anchor = document.querySelector('a')!;
 
@@ -37,26 +39,7 @@ form.addEventListener('submit', (e: Event) => {
   
 })
 
-class Invoice {
-  // readonly client: string;
-  // private details: string;
-  // public amount: number;
 
-  constructor(
-    readonly client: string,
-    private details: string,
-    public amount: number
-  ){
-    // this.client = c;
-    // this.details = d;
-    // this.amount = a;
-  }
-
-  format() {
-    return `${this.client} ows $${this.amount} for ${this.details}`
-  }
-
-}
 
 const invOne = new Invoice('mario', 'work on mario website', 250);
 const invTwo = new Invoice('louigi', 'work on louigi website', 300);
@@ -69,9 +52,9 @@ invoices.push(invOne);
 invoices.push(invTwo);
 
 invTwo.amount = 200;
-invOne.client = 'yoshi';
+// invOne.client = 'yoshi';
 
-invoices.forEach(inv => console.log(inv.client, inv.details, inv.amount, inv.format()));
+invoices.forEach(inv => console.log(inv.client, inv.amount, inv.format()));
 
 console.log(invoices);
 
