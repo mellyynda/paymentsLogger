@@ -1,3 +1,19 @@
+const me = {
+    name: 'Mely',
+    age: 8,
+    speak(text) {
+        console.log(text);
+    },
+    spend(amount) {
+        console.log('i have spent:', amount);
+        return amount;
+    },
+};
+const greetPerson = (person) => {
+    console.log('Hello', person.name);
+};
+greetPerson(me);
+console.log(me);
 import { Invoice } from './classes/Invoice.js';
 //dom interaction
 //const anchor = document.querySelector('a')!;

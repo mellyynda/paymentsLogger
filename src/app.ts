@@ -1,3 +1,31 @@
+//interfaces
+interface isPerson {
+  name: string;
+  age: number;
+  speak(a: string): void;
+  spend(b: number): number;
+}
+
+const me: isPerson = {
+  name:'Mely', 
+  age: 8,
+  speak(text: string): void {
+    console.log(text);
+  },
+  spend(amount: number): number {
+    console.log('i have spent:', amount);
+    return amount    
+  },
+};
+
+const greetPerson = (person: isPerson) => {
+  console.log('Hello', person.name)
+}
+
+greetPerson(me);
+
+console.log(me);
+
 import { Invoice } from './classes/Invoice.js';
 
 //dom interaction
@@ -57,4 +85,3 @@ invTwo.amount = 200;
 invoices.forEach(inv => console.log(inv.client, inv.amount, inv.format()));
 
 console.log(invoices);
-
