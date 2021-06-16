@@ -38,14 +38,18 @@ form.addEventListener('submit', (e: Event) => {
 })
 
 class Invoice {
-  client: string;
-  details: string;
-  amount: number;
+  // readonly client: string;
+  // private details: string;
+  // public amount: number;
 
-  constructor(c: string, d: string, a: number){
-    this.client = c;
-    this.details = d;
-    this.amount = a;
+  constructor(
+    readonly client: string,
+    private details: string,
+    public amount: number
+  ){
+    // this.client = c;
+    // this.details = d;
+    // this.amount = a;
   }
 
   format() {
@@ -66,6 +70,8 @@ invoices.push(invTwo);
 
 invTwo.amount = 200;
 invOne.client = 'yoshi';
+
+invoices.forEach(inv => console.log(inv.client, inv.details, inv.amount, inv.format()));
 
 console.log(invoices);
 

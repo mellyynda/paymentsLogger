@@ -22,10 +22,16 @@ form.addEventListener('submit', function (e) {
     console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
 });
 var Invoice = /** @class */ (function () {
-    function Invoice(c, d, a) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
+    // readonly client: string;
+    // private details: string;
+    // public amount: number;
+    function Invoice(client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
+        // this.client = c;
+        // this.details = d;
+        // this.amount = a;
     }
     Invoice.prototype.format = function () {
         return this.client + " ows $" + this.amount + " for " + this.details;
@@ -40,4 +46,5 @@ invoices.push(invOne);
 invoices.push(invTwo);
 invTwo.amount = 200;
 invOne.client = 'yoshi';
+invoices.forEach(function (inv) { return console.log(inv.client, inv.details, inv.amount, inv.format()); });
 console.log(invoices);
