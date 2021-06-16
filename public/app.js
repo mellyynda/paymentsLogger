@@ -21,3 +21,23 @@ form.addEventListener('submit', function (e) {
     // })
     console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
 });
+var Invoice = /** @class */ (function () {
+    function Invoice(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+    Invoice.prototype.format = function () {
+        return this.client + " ows $" + this.amount + " for " + this.details;
+    };
+    return Invoice;
+}());
+var invOne = new Invoice('mario', 'work on mario website', 250);
+var invTwo = new Invoice('louigi', 'work on louigi website', 300);
+// console.log(invOne, invTwo);
+var invoices = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+invTwo.amount = 200;
+invOne.client = 'yoshi';
+console.log(invoices);
