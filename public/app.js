@@ -30,7 +30,6 @@ const addUID = (obj) => {
     return Object.assign(Object.assign({}, obj), { uid });
 };
 let docOne = addUID({ name: 'meli', age: 32 });
-console.log(docOne);
 const docThree = {
     uid: 3,
     resourceName: 'lala',
@@ -41,4 +40,22 @@ const docFour = {
     resourceName: 'shopping list',
     data: ['bread', 'milk'],
 };
-console.log(docThree, docFour);
+// console.log(docThree, docFour);
+//ENUMS
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["PERSON"] = 1] = "PERSON";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+})(ResourceType || (ResourceType = {}));
+const ResOne = {
+    uid: 5,
+    resType: ResourceType.BOOK,
+    data: { title: 'revenge of the weak' }
+};
+const ResTwo = {
+    uid: 10,
+    resType: ResourceType.PERSON,
+    data: { name: 'mel' }
+};
+console.log(ResOne, ResTwo);
