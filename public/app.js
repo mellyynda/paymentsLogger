@@ -14,12 +14,14 @@ const ul = document.querySelector('ul');
 const list = new ListTemplate(ul);
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    let values;
+    values = [tofrom.value, details.value, amount.valueAsNumber];
     let doc;
     if (type.value === 'invoice') {
-        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Invoice(...values);
     }
     else {
-        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Payment(...values);
     }
     list.render(doc, type.value, 'start');
     console.log(doc);
@@ -59,3 +61,12 @@ const ResTwo = {
     data: { name: 'mel' }
 };
 console.log(ResOne, ResTwo);
+//tuples
+let arr = ['ryu', 25, true];
+arr[0] = 20;
+arr = [30, false, 'dd'];
+console.log(arr);
+let tup = ['ryu', 40, true];
+tup[0] = 'some string';
+let student;
+student = ['chun-li', 40];
